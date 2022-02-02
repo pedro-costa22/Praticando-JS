@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--style-->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <!-- Font Awesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    
+    <!-- Scripts-->
+    <script src="app.js"></script>
+    
+   
+    <title>Finanças Pessoais</title>
+
+</head>
+
+<body>
+    <nav id="navbar"> <!--navbar-->
+        <div id="container_nav">
+
+            <div class="nav_items">
+                <a href="index.html"><img src="img/logoo.png" alt="logo" width="70px"></a>
+            </div>
+
+            
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+            </label>
+
+            <ul id="menu">
+                <li>
+                    <a href="index.html" id="cadastro">Cadastro</a>
+                </li>
+               
+                <li>
+                    <a href="consulta.html" id="consulta">Consulta</a>
+                </li>
+            </ul>
+            
+        
+        </div>
+    </nav> <!-- -->
+
+    <div id="containerText"> <!-- text-->
+        <h1 class="ajuste_title">Registro de nova despesa</h1>
+        
+    </div> <!-- -->
+
+    <div id="containerForm"> <!-- form-->
+
+        <div class="formAno">
+            <select class="form-control" id="ano">
+                <option value="">Ano</option>
+                <option value="2022">2022</option>
+            </select>
+        </div>
+
+        <div class="formMes">
+            <select class="form-control" id="mes">
+                <option value="">Mês</option>
+                <option value="1">Janeiro</option>
+                <option value="2">Fevereiro</option>
+                <option value="3">Março</option>
+                <option value="4">Abril</option>
+                <option value="5">Maio</option>
+                <option value="6">Junho</option>
+                <option value="7">Julho</option>
+                <option value="8">Agosto</option>
+                <option value="9">Setembro</option>
+                <option value="10">Outubro</option>
+                <option value="11">Novembro</option>
+                <option value="12">Dezembro</option>
+            </select>
+        </div>
+
+        <div class="formDia">
+            <input type="number" class="form-control" placeholder="Dia" id="dia">
+        </div>
+
+        <div class="formTipo">
+            <select class="form-control" id="tipo">
+                <option value="">Tipo</option>
+                <option value="1">Alimentação</option>
+                <option value="2">Educação</option>
+                <option value="3">Lazer</option>
+                <option value="4">Saúde</option>
+                <option value="5">Transporte</option>
+            </select>
+
+        </div>
+    </div>
+
+    <div id="container_Form">
+        <div class="descricao">
+            <input type="text" class="form-control" placeholder="Descrição" id="descricao">
+        </div>
+
+        <div class="valor">
+            <input type="number" class="form-control" placeholder="valor" id="valor">
+        </div>
+
+        <div class="button">
+            <button type="button" class="btn" onclick="cadastrarDespesa()">
+                Listar despesa
+                <i class="fas fa-plus"></i>
+            </button>
+        </div>
+    </div> <!-- -->
+
+   
+  
+  <!-- Modal -->
+  <div class="modal fade" id="modalRegistroDespesa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div id="modal_div">
+          <h5 class="modal-title" id="modal_titulo"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="modal_conteudo">
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button"  data-dismiss="modal" id="modal_btn"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+    
+  <script src="navbar.js"></script> <!--navbar edits-->
+</body>
+</html>
