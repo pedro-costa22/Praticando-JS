@@ -1,0 +1,52 @@
+body {
+    background: #ccc;
+    height: 100vh;
+  
+}
+
+.container {
+    height: 400px;
+    width: 1200px;
+    background-color: #fff;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 8px;
+    box-shadow: 20px 20px 40px rgba(60, 60, 150, 0.25);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    place-items: center;
+   
+    
+}
+
+.circle {
+    position: relative;
+    height: 250px;
+    width: 250px;
+    background: linear-gradient(to right, #AB08BB, #612abb) no-repeat;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+
+.circle::before{
+    content: "";
+    position: absolute;
+    height: 82%;
+    width: 82%;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.text {
+    position: relative;
+    font-family: "Poppins", sans-serif;
+    font-size: 50px;
+    color: #AB08BB;
+}
+
+
+
