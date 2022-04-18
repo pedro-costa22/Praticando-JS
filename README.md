@@ -14,4 +14,11 @@
  </span>
 
 <hr>
+
+<div align="center">
+  
+  <span align="left">App Finanças - Registra as despesas do usuário para um controle financeiro. </span> <br>
+  <img height="450em" src="https://github.com/pedro-costa22/Praticando-JS/blob/master/Demonstrativo/financas.gif?raw=true"/> <br> <br>
+  
+ </div>
   
