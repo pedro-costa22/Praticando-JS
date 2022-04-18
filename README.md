@@ -16,9 +16,22 @@
 <hr>
 
 <div align="center">
-  
   <span align="left">App Finanças - Registra as despesas do usuário para um controle financeiro. </span> <br>
   <img height="450em" src="https://github.com/pedro-costa22/Praticando-JS/blob/master/Demonstrativo/financas.gif?raw=true"/> <br> <br>
-  
+    
+   <span align="left">Calculadora simples </span> <br>
+  <img height="450em" src="https://github.com/pedro-costa22/Praticando-JS/blob/master/Demonstrativo/calculadoraSimples.gif?raw=true"/> <br> <br>
+    
+   <span align="left">Calculadora IMC </span> <br>
+  <img height="450em" src="https://github.com/pedro-costa22/Praticando-JS/blob/master/Demonstrativo/IMC.gif?raw=true"/> <br> <br>
+    
+   <span align="left">Relógio digital </span> <br>
+  <img height="450em" src="https://github.com/pedro-costa22/Praticando-JS/blob/master/Demonstrativo/relogio.gif?raw=true"/> <br> <br>
+    
+   <span align="left">Progress Bar </span> <br>
+  <img height="450em" src="https://github.com/pedro-costa22/Praticando-JS/blob/master/Demonstrativo/progressBar.gif?raw=true"/> <br> <br>
+    
+    
+    
  </div>
   
