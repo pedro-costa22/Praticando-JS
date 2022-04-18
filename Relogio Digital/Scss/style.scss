@@ -14,12 +14,34 @@ body {
     background: $bg-color;
 }
 
+#navbar{
+    @include navbar-container;
+
+    .nav-items{
+        display: flex;
+        width: 970px;
+        justify-content: space-between;
+
+        ul li {
+            display: inline-block;
+            list-style: none;
+            color: $secondary-color;
+            padding: 0 20px;
+            cursor: pointer;
+            transition: .4s;
+
+            &:hover{
+                color: $primary-color;
+            }
+        }
+    }
+}
 
 
 #container {
     @include container;
     
-    .relogio{
+    .relogio, .relogio2{
         @include relogio-container;
         font-size: 2rem;
 
@@ -30,5 +52,12 @@ body {
             text-shadow: 2px 2px 10px rgba(15, 15, 15, 0.9);
         }
     }
+
+    #amPM {
+        margin-top: 20px;
+        font-size: 6rem;
+    }
+
+   
 }
 
