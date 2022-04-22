@@ -14,16 +14,79 @@
 <body>
 
     <!--Navegação-->
-    <!--<header class="container-header">
+    <header class="container-header">
         <div class="navbar"> 
-            a
+            <div class="nome">
+                <a href="#">
+                   Pedro Henrique Costa
+                </a>
+            </div>
+
+            <div class="nav-list">
+                <ul id="menu">
+                    <li>
+                        <a href="#home"><i class="fa-solid fa-house"></i>Home
+                        </a>
+                     </li>
+                
+
+               
+                    <li><a href="#sobre-mim"><i class="fa-solid fa-user"></i>
+                        Sobre
+                    </a></li>
+             
+
+            
+                    <li><a href="#formacao"><i class="fa-solid fa-graduation-cap"></i>
+                        Formação
+                    </a></li>
+            
+
+                    <li><a href="#hard"><i class="fa-solid fa-code"></i>
+                        Hard Skills
+                    </a></li>
+            
+                
+         
+                    <li><a href="#experiencia"><i class="fa-solid fa-briefcase"></i>
+                        Experiência
+                    </a></li>
+        
+
+          
+                    <li><a href="#certificado"><i class="fa-solid fa-medal"></i>
+                        Certificados
+                    </a></li>
+        
+
+         
+                    <li><a href="#idiomas"><i class="fas fa-language"></i>
+                        Idiomas
+                    </a></li>
+          
+                
+            
+                    <li><a href="#soft"><i class="fas fa-cogs"></i>
+                        Soft Skills
+                    </a></li>
+                </ul>
+            </div>
+
+            <div class="modo">
+                <div class="dark-mode">
+                    <a href="#">
+                        <i class="fa-solid fa-circle-half-stroke"></i>
+                    </a>
+                </div>
+               <div class="btn-mode"></div>
+            </div>
         </div>
-    </header> -->
+    </header> 
 
     <main id="container-main">
         <div class="left">
 
-            <div class="profile-topo">
+            <div class="profile-topo" id="home">
                 <div class="foto-perfil"></div>
                 <h1>Pedro Henrique Costa</h1>
                 <h2>Front-End Developer</h2>
@@ -37,7 +100,7 @@
                     <li><i class="fa solid fa-id-card"></i>RA: 2221200048 </li>
                     <li><i class="fa-solid fa-location-dot"></i> São Paulo - SP </li>
                     <li><i class="fa-solid fa-envelope"></i>pedrohcosta.contato@gmail.com </li>
-                    <li><i class="fa-solid fa-phone"></i>(11)97288-5756 </li>
+                    <li><i class="fa-solid fa-phone"></i>(11) 97288-5756 </li>
                 </ul>
 
                 <!--Redes Sociais-->
@@ -45,21 +108,27 @@
                     <h3>Redes Sociais</h3>
                     <ul>
                         <li>
-                            <a href="https://github.com/pedro-costa22" target="blank">
+                            <a href="https://github.com/pedro-costa22" target="blank" class="ver-mais">
                                 <i class="fa-brands fa-github"></i>pedro-costa22
                             </a>
+                            <i class="fa-solid fa-arrow-up-right-from-square icon-ver-mais"></i>
+                
                         </li>
 
+                        
+
                         <li>
-                            <a href="https://www.linkedin.com/in/pedro-henrique-costa-b272b7216/" target="blank">
+                            <a href="https://www.linkedin.com/in/pedro-henrique-costa-b272b7216/" target="blank" class="ver-mais">
                                 <i class="fa-brands fa-linkedin"></i>Pedro Henrique Costa
                             </a>
+                            <i class="fa-solid fa-arrow-up-right-from-square icon-ver-mais"></i>
+                            
                         </li>
                     </ul>
                 </div>
 
                 <!--SOBRE MIM-->
-                <div class="sobre-mim">
+                <div class="sobre-mim" id="sobre-mim">
                     <h3> Sobre mim</h3>
                     <p>
                         Olá meu nome é <span>Pedro Henrique</span> e se você está procurando um programador, vocẽ veio ao lugar certo. 
@@ -71,7 +140,7 @@
                 </div>
 
                 <!--Formação-->
-                <div class="formacao">
+                <div class="formacao" id="formacao">
                     <h3>Formação</h3>
                     
                     <div class="formacao-items">
@@ -112,15 +181,16 @@
                 </div>
 
                  <!--Skills-->
-                <div class="skills">
+                <div class="skills" id="hard">
                     <h3>Hard Skills</h3>
                     <div class="skills-items">
                         <div class="skills-left">
                             <ul>
+                                <li>Figma</li>
                                 <li>HTML</li>
                                 <li>CSS/Sass</li>
                                 <li>Bootstrap</li>
-                                <li>Figma</li>
+                                
                             </ul>
                         </div>
 
@@ -141,9 +211,119 @@
         </div>
 
         <div class="right">
-            a
+           <div class="conteudo-right">
+                <!--Expeciencias profissionais-->
+            <div class="experiencia" id="experiencia">
+
+                <h3>EXPERIÊNCIAS</h3>
+                <div class="experiencia-items">
+                    <div><span class="span-circle"></span></div>
+
+                    <div class="item">
+                        <p>Atendente</p>
+                        <p>07/2018 - 09/2019 | Jesus Rogério da Silva - ME </p>
+                        <p>Organização e reposição de estoque e atendimento ao cliente.</p>
+                    </div>
+
+                </div>
+
+                <div class="experiencia-items">
+                    <div><span class="span-circle"></span></div>
+
+                    <div class="item">
+                        <p>Operador de Telemarketing Receptivo. </p>
+                        <p>01/2021 - 10/2021 | Atento Brasil S/A</p>
+                        <p>Rotina de atendimento receptivo, auxiliando os clientes da financeira itaucard.</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--Cerficações-->
+            <div class="certificados" id="certificado">
+                <h3>Certicados</h3>
+                <h4><a href="https://www.proa.org.br/proprofissao/" class="ver-mais" target="blank">
+                    Desenvolvedor Web Full Stack - Senac 2022</a>
+                    <i class="fa-solid fa-arrow-up-right-from-square icon-ver-mais"></i>
+                </h4>
+                <p>Curso focado no desenvonvolvimento Web, passando pelo Front-End (HTML, CSS, JavaScript e ReactJS) 
+                    e pelo back-end (Modelagem de Dados, SQL, Java e Spring Boot</p>
+
+                <h4><a href="https://www.dio.me/certificate/BC7001ED/share" class="ver-mais" target="blank">
+                    Desenvolvimento avançado com JavaScript ES6 - DIO 2022</a>
+                    <i class="fa-solid fa-arrow-up-right-from-square icon-ver-mais"></i>
+                </h4>
+                <p>Curso oferecido pela Digital Innovation One, focado no desenvolvimento avançado
+                    com JavaScript (Orientação e Objetos e Programação Funcional).
+                </p>
+
+                <h4><a href="https://www.dio.me/certificate/A02C335B/share" class="ver-mais" target="blank">
+                    JavaScript ES6 Essencial - DIO 2022</a>
+                    <i class="fa-solid fa-arrow-up-right-from-square icon-ver-mais"></i>
+                </h4>
+                <p>Curso oferecido pela Digital Innovation One, focado nos conceitos essenciais da linguagem 
+                    JavaScript para o desenvolvimento Web.
+                </p>
+
+                <h4><a href="https://www.dio.me/certificate/1A581913/share" class="ver-mais" target="blank">
+                    Criação de Websites com HTML e CSS - DIO 2021</a>
+                    <i class="fa-solid fa-arrow-up-right-from-square icon-ver-mais"></i>
+                </h4>
+                <p>Curso focado no desenvonvolvimento Web, utilizando HTML5 semântico e CSS.
+                </p>
+
+                <h4><a href="https://www.udemy.com/certificate/UC-69e1ee69-84d8-482d-a8ed-2275d3ee1bb8/" class="ver-mais" target="blank">
+                    Algoritimo e Lógica de programação - Udemy.  2021</a>
+                    <i class="fa-solid fa-arrow-up-right-from-square icon-ver-mais"></i>
+                </h4>
+                <p>Curso focado no desenvonvolvimento Web, utilizando HTML5 semântico e CSS.
+                </p>
+            </div>
+
+            <!--Idiomas-->
+            <div class="idiomas" id="idiomas">
+                <h3>Idiomas</h3>
+               <div class="idioma">
+                   <img src="img/brazil-circular.png">
+                   <p>Português - Nativo</p>
+
+                   <img src="img/ingles-circular.png" class="ingles">
+                   <p>Inglês - Básico</p>
+               </div>
+            </div>
+
+            <!--soft Skills-->
+            <div class="soft" id="soft">
+                <h3>Soft Skills</h3>
+                <div class="soft-skills">
+                   <div class="soft-left">
+                    <ul>
+                        <li>Comunicação</li>
+                        <li>Trabalho em equipe</li>
+                        <li>Criatividade</li>
+                        <li>Flexibilidade</li>
+                    </ul>
+                   </div>
+
+                   <div class="soft-right">
+                    <ul>
+                        <li>Resiliência</li>
+                        <li>Autodidatismo</li>
+                        <li>Organização</li>
+                        <li>Ética</li>
+                    </ul>
+                   </div>
+                </div>
+            </div>
+
+
+
+
+           </div>
         </div>
     </main>
+
+    <script src="js/app.js"></script>
     
 </body>
 </html>
