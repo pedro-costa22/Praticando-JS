@@ -1,0 +1,114 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  background: #282a36;
+}
+
+.container-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+}
+.container-main h1 {
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+.container-main .cadastro {
+  margin: 10px 0px 20px 0px;
+}
+.container-main .cadastro input {
+  width: 350px;
+  height: 25px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+.container-main .cadastro .btn {
+  background: #00CED1;
+  color: #282a36;
+  font-size: 15px;
+  font-weight: 600;
+  width: 120px;
+  height: 35px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.container-main .cadastro .btn:hover {
+  background: #00a9ac;
+  color: #fff;
+  transform: scale(1.02);
+}
+.container-main .tarefa {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  width: 490px;
+}
+.container-main .tarefa p {
+  padding-left: 10px;
+}
+.container-main .tarefa .descricao {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  width: 480px;
+  height: 25px;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.container-main .tarefa .btns {
+  display: flex;
+  width: 90px;
+  margin-left: 5px;
+}
+.container-main .tarefa .btns .btn-edit {
+  background: #00CED1;
+  transition: 0.3s;
+  font-size: 15px;
+  font-weight: 600;
+  width: 40px;
+  height: 33px;
+  padding: 5px;
+  margin: 3px;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+}
+.container-main .tarefa .btns .btn-edit:hover {
+  background: #00a9ac;
+  color: #fff;
+}
+.container-main .tarefa .btns .btn-exit {
+  background: #d13b00;
+  transition: 0.3s;
+  font-size: 15px;
+  font-weight: 600;
+  width: 40px;
+  height: 33px;
+  padding: 5px;
+  margin: 3px;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+}
+.container-main .tarefa .btns .btn-exit:hover {
+  background: #a53001;
+  color: #fff;
+}
+
+/*# sourceMappingURL=style.css.map */

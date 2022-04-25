@@ -1,0 +1,124 @@
+@import "./mixin";
+@import "./variables";
+
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    background: $bg;
+}
+
+
+
+
+.container-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+
+    h1{
+        color: $white;
+        font-family: "Poppins", sans-serif;
+    }
+
+   .cadastro {
+       margin: 10px 0px 20px 0px;
+
+       input {
+           width: 350px;
+           height: 25px;
+           padding: 5px 10px;
+           border-radius: 5px;   
+           border: none;    
+           outline: none;
+        }
+
+        .btn {
+            background: $primary-color;
+            color: $bg;
+            font-size: 15px;
+            font-weight: 600;
+            width: 120px;
+            height: 35px;
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: .4s;
+
+            &:hover {
+                background: $hover-green;
+                color: $white;
+                transform: scale(1.02);
+            }
+        }
+        
+   }
+
+   .tarefa {
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       margin-top: 10px;
+       width: 490px;
+
+       p {
+           padding-left: 10px;
+       }
+      
+
+       .descricao {
+           display: flex;
+           align-items: center;
+           background: $white;
+           width: 480px;
+           height: 25px;
+           padding: 5px 10px;
+           border-radius: 5px;
+       }
+
+       .btns {
+           display: flex;
+           width: 90px;
+           margin-left: 5px;
+
+          
+         .btn-edit {
+            background: $primary-color;
+            transition: .3s;
+            @include button;
+
+            &:hover{
+                background: $hover-green;
+                color: $white;
+                
+            }
+         }
+
+         .btn-exit {
+             background: $bg-secondary;
+             transition: .3s;
+             @include button;
+
+             &:hover{
+                 background: $hover-red;
+                 color: $white;
+             }
+         }
+       }
+   }
+    
+
+    
+}
+
