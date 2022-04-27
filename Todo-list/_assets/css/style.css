@@ -34,7 +34,7 @@ body {
   border: none;
   outline: none;
 }
-.container-main .cadastro .btn {
+.container-main .cadastro .btnCadastro {
   background: #00CED1;
   color: #282a36;
   font-size: 15px;
@@ -47,7 +47,7 @@ body {
   cursor: pointer;
   transition: 0.4s;
 }
-.container-main .cadastro .btn:hover {
+.container-main .cadastro .btnCadastro:hover {
   background: #00a9ac;
   color: #fff;
   transform: scale(1.02);
