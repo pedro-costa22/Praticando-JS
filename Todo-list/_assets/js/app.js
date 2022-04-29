@@ -1,8 +1,6 @@
 let inputCadastro = document.querySelector("#cadastroDespesa");
 let btnCadastro = document.querySelector(".btnCadastro");
-let btnEdit = document.querySelectorAll(".btn-edit");
-let btnExcluir = document.querySelectorAll(".btn-exit");
-let tarefas = document.querySelectorAll(".tarefa");
+
 
 btnCadastro.addEventListener("click", () =>{  
     let cadastroValue = inputCadastro.value;
@@ -12,7 +10,6 @@ btnCadastro.addEventListener("click", () =>{
 
     } else{
        alert('Cadastrado com sucesso');
-       criandoTarefa(cadastroValue); 
        let tarefa = new Tarefa(cadastroValue);
        guardandoTarefa(tarefa);
        inputCadastro.value = "";
@@ -27,7 +24,10 @@ class Tarefa {
 }
 
 function guardandoTarefa(tarefa){
-   gravar(tarefa)
+   //gravar(tarefa)
+    gravar(tarefa);
+    recuperarTarefa();
+    
 }
 
 
@@ -49,6 +49,37 @@ function gravar(tarefa) {
         localStorage.setItem('id', id)
     }
 }
+
+//Recuperando registros
+function recuperarTarefa(){
+    let tarefas = [];
+    let id = localStorage.getItem('id');
+
+    for(let i = 0; i <= id; i++){
+        let tarefaId = JSON.parse(localStorage.getItem(i));
+
+        if(tarefaId === null){
+            continue
+        }
+
+        tarefaId.id = i;
+        tarefas.push(tarefaId)
+    }
+
+    let idPosition = localStorage.getItem('id');
+    
+    let teste = tarefas[idPosition].tarefa;
+    criandoTarefa(teste); 
+   // criandoTarefa(teste)
+  
+    return tarefas;
+    
+}
+
+
+
+
+
 
 // Criando elemento no HTML
 const container = document.querySelector(".container-main");
@@ -105,8 +136,6 @@ function criandoTarefa(text){
    
 
 }
-
-
 
 
 
