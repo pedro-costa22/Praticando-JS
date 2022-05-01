@@ -1,5 +1,7 @@
 let inputCadastro = document.querySelector("#cadastroDespesa");
 let btnCadastro = document.querySelector(".btnCadastro");
+let globalTarefas = recuperarTarefa();
+
 
 
 btnCadastro.addEventListener("click", () =>{  
@@ -8,11 +10,14 @@ btnCadastro.addEventListener("click", () =>{
     if(cadastroValue === ""){
        alert("Valor invalido, verifique novamente");
 
-    } else{
-      // alert('Cadastrado com sucesso');
+    }else if(globalTarefas.length <= 13){
+       alert('Cadastrado com sucesso');
        let tarefa = new Tarefa(cadastroValue);
        guardandoTarefa(tarefa);
        inputCadastro.value = "";
+
+    } else {
+        alert("{ERROR}! Limite de tarefas atingidas, complete alguma tarefa cadastrada para adicionar uma nova...")
     }
 })
 
@@ -81,9 +86,10 @@ function recuperarTarefa(){
 function conteudoTarefa(listaTarefas){
     let novaTarefaID = localStorage.getItem('id');
     let conteudoNovaTarefa = listaTarefas[novaTarefaID].tarefa;
-    //window.location.reload();
+ 
+    criandoTarefa(conteudoNovaTarefa);
 
-    return criandoTarefa(conteudoNovaTarefa);
+    return window.location.reload()
 }
 
 
@@ -97,7 +103,7 @@ function criandoTarefa(text){
     let divTarefa = document.createElement('div');
     divTarefa.className = "tarefa";
     
-
+    
     //Criando a descrição
     let divDescricao = document.createElement("div");
     divDescricao.classList.add("descricao");
@@ -109,19 +115,18 @@ function criandoTarefa(text){
     divDescricao.appendChild(textoTarefa);
 
 
-
     //Criando a os botoes
     let divBotoes = document.createElement("div");
     divBotoes.classList.add('btns')
 
     //Botão confirmar
-    let btnEditar = document.createElement('button');
-    btnEditar.type = "submit";
-    btnEditar.classList.add('btn-edit');
+    let btnValid = document.createElement('button');
+    btnValid.type = "submit";
+    btnValid.classList.add('btn-edit');
 
-    btnEditar.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>';
+    btnValid.innerHTML = '<i class="fa-solid fa-check"></i>';
 
-    divBotoes.appendChild(btnEditar);
+    divBotoes.appendChild(btnValid);
 
     //Botao excluir
     let btnExcluir = document.createElement('button');
@@ -133,16 +138,10 @@ function criandoTarefa(text){
     divBotoes.appendChild(btnExcluir);
 
 
-
     //Inserindo no HTML
     divTarefa.appendChild(divDescricao);
     divTarefa.appendChild(divBotoes);
     container.appendChild(divTarefa);
-
-
-    
-
-   
  
 }
 
@@ -150,128 +149,264 @@ function criandoTarefa(text){
 //Criando as tarefas já existentes ao acessar a página
 window.addEventListener("load", () =>{
     let tarefasExistentes = recuperarTarefa();
+    clearBD();
     
     
     for(let i = 0; i  <= (tarefasExistentes.length - 1); i++) {
             let conteudoTarefa = tarefasExistentes[i].tarefa;
-             criandoTarefa(conteudoTarefa)
-              
+             criandoTarefa(conteudoTarefa)    
     }
 
   
-
-    let divs = document.querySelectorAll('.tarefa')
-    //console.log(divs[0]);
-
-    let btnEditar = document.querySelectorAll('.btn-edit')
-    //console.log(btnEditar);
-
-    let btnExcluir = document.querySelectorAll('.btn-exit')
-    //console.log(btnExcluir);
-
-    funcionalidadesBotoes(divs, btnEditar, btnExcluir);  
-   
-
-    
-
+    let divs = document.querySelectorAll('.tarefa');
+    let btnValid = document.querySelectorAll('.btn-edit');
+    let btnExcluir = document.querySelectorAll('.btn-exit');
+    let textoTarefa = document.querySelectorAll('p');
+    let divTexto = document.querySelectorAll('.descricao');
+    funcionalidadesBotoes(divs, btnValid, btnExcluir, textoTarefa, divTexto);  
 })
 
-let globalTarefas = recuperarTarefa();
-
+//Removendo item do LocalStore
 function removendoItem(id){
     localStorage.removeItem(id)
     let idLocal = localStorage.getItem('id') - 1;
     let newCapacity = localStorage.setItem('id', idLocal)
+    clearBD();
 
-    /*
-    for(let i = 0; i <= globalTarefas.length; i++){
-        if(i <= idLocal){
-            globalTarefas[i] = localStorage.setItem('id', i)
-        }
-
-        for(let n = globalTarefas.length; n > idLocal; n--){
-            localStorage.removeItem(n)
-        }
-    } */
-
-   
-
-    return newCapacity
-   
-    
+    //return newCapacity  
     
 }
 
 
-
 //Funcionalidades botes
-function funcionalidadesBotoes(div, btnEdit, btnExluir){
-  /*
+function funcionalidadesBotoes(div, btnValid, btnExluir, text, divTexto){
+
     btnExluir.forEach(element => {
         element.addEventListener("click", () =>{
             switch(element){
                 case btnExluir[0]:
-                        div[0].remove();
-                        removendoItem(0);
+                        let confirmando = confirmDelete();
+                        if(confirmando == true) {
+                            div[0].remove();
+                            removendoItem(0);
+                        }
                     break;
 
                 case btnExluir[1]:
-                    div[1].remove();
-                        removendoItem(1);
+                        let confirmando1 = confirmDelete();
+                        if(confirmando1 == true){
+                            div[1].remove();
+                            removendoItem(1);
+                        }
                     break;
 
                 case btnExluir[2]:
-                    div[2].remove();
-                        removendoItem(2);
+                    let confirmando2 = confirmDelete();
+                        if(confirmando2 == true){
+                            div[2].remove();
+                            removendoItem(2);
+                        }
                     break;
 
                 case btnExluir[3]:
-                    div[3].remove();
-                    removendoItem(3);
+                    let confirmando3 = confirmDelete();
+                        if(confirmando3 == true){
+                            div[3].remove();
+                            removendoItem(3);
+                        }
                     break;
 
-                
+                case btnExluir[4]:
+                    let confirmando4 = confirmDelete();
+                    if(confirmando4 == true){
+                        div[4].remove();
+                        removendoItem(4);
+                    }
+                    break;
+
+                case btnExluir[5]:
+                    let confirmando5 = confirmDelete();
+                    if(confirmando5 == true){
+                        div[5].remove();
+                        removendoItem(5);
+                    }
+                    break;
+
+                case btnExluir[6]:
+                    let confirmando6 = confirmDelete();
+                        if(confirmando6 == true){
+                            div[6].remove();
+                            removendoItem(6);
+                        }
+                    break;
+
+                case btnExluir[7]:
+                    let confirmando7 = confirmDelete();
+                        if(confirmando7 == true){
+                            div[7].remove();
+                            removendoItem(7);
+                        }
+                    break;
+
+                case btnExluir[8]:
+                    let confirmando8 = confirmDelete();
+                        if(confirmando8 == true){
+                            div[8].remove();
+                            removendoItem(8);
+                        }
+                    break;
+
+                case btnExluir[9]:
+                    let confirmando9 = confirmDelete();
+                        if(confirmando9 == true){
+                            div[9].remove();
+                            removendoItem(9);
+                        }
+                    break;
+
+                case btnExluir[10]:
+                    let confirmando10 = confirmDelete();
+                    if(confirmando10 == true){
+                        div[10].remove();
+                        removendoItem(10);
+                    }
+                    break;
+
+                case btnExluir[11]:
+                    let confirmando11 = confirmDelete();
+                        if(confirmando11 == true){
+                            div[11].remove();
+                            removendoItem(11);
+                        }
+                    break;
+
+                case btnExluir[12]:
+                    let confirmando12 = confirmDelete();
+                    if(confirmando12 == true){
+                        div[12].remove();
+                        removendoItem(12);
+                    }
+                    break;
+
+                case btnExluir[13]:
+                    let confirmando13 = confirmDelete();
+                        if(confirmando13 == true){
+                            div[13].remove();
+                            removendoItem(13);
+                        }
+                    break;
+
+                case btnExluir[14]:
+                    let confirmando14 = confirmDelete();
+                    if(confirmando14 == true){
+                        div[14].remove();
+                        removendoItem(14);
+                    }
+                    break;
+            
             }
         })
     });
-*/
 
-  
+    btnValid.forEach(element =>{
+        element.addEventListener("click", () =>{
+            switch(element){
+                case btnValid[0]:
+                        text[0].classList.toggle('textValid');
+                        divTexto[0].classList.toggle('valid');
+                    break;
 
+                case btnValid[1]:
+                        text[1].classList.toggle('textValid');
+                        divTexto[1].classList.toggle('valid');
+                    break;
 
+                case btnValid[2]:
+                        text[2].classList.toggle('textValid');
+                        divTexto[2].classList.toggle('valid');
+                    break;
 
-  /* btnExluir.addEventListener("click", () =>{
-        div.remove();
-        removendoItem(0)
-       
-   }) */
+                case btnValid[3]:
+                        text[3].classList.toggle('textValid');
+                        divTexto[3].classList.toggle('valid');;
+                    break;
 
-  /*
-   btnEdit.addEventListener("click", (item) =>{
-        let listaTarefas = recuperarTarefa();
+                case btnValid[4]:
+                    text[4].classList.toggle('textValid');
+                        divTexto[4].classList.toggle('valid');
+                    break;
 
-        console.log(listaTarefas);
-       
+                case btnValid[5]:
+                    text[5].classList.toggle('textValid');
+                    divTexto[5].classList.toggle('valid');;
+                    break;
 
-        for(let i = 0; i<= listaTarefas.length; i++){
-            let mostrandoTodosValores = listaTarefas[i].tarefa;
-            if(mostrandoTodosValores[i] == item[i]){
-               
+                case btnValid[6]:
+                    text[6].classList.toggle('textValid');
+                        divTexto[6].classList.toggle('valid');
+                    break;
+
+                case btnValid[7]:
+                    text[7].classList.toggle('textValid');
+                        divTexto[7].classList.toggle('valid');
+                    break;
+
+                case btnValid[8]:
+                    text[8].classList.toggle('textValid');
+                        divTexto[8].classList.toggle('valid');
+                    break;
+
+                case btnValid[9]:
+                    text[9].classList.toggle('textValid');
+                        divTexto[9].classList.toggle('valid');
+                    break;
+
+                case btnValid[10]:
+                    text[10].classList.toggle('textValid');
+                    divTexto[10].classList.toggle('valid');
+                    break;
+
+                case btnValid[11]:
+                    text[11].classList.toggle('textValid');
+                        divTexto[11].classList.toggle('valid');
+                    break;
+
+                case btnValid[12]:
+                    text[12].classList.toggle('textValid');
+                        divTexto[12].classList.toggle('valid');
+                    break;
+
+                case btnValid[13]:
+                    text[13].classList.toggle('textValid');
+                        divTexto[13].classList.toggle('valid');
+                    break;
+
+                case btnValid[14]:
+                    text[14].classList.toggle('textValid');
+                        divTexto[14].classList.toggle('valid');
+                    break;
             }
-        }
-        
-        
-        let alterandoTarefaID = localStorage.getItem('id');
-        let conteudoNovaTarefa = listaTarefas[alterandoTarefaID].tarefa;
+        })
+    })
 
-        console.log(conteudoNovaTarefa); 
-        
-   }) 
-    */
-    
+
 } 
 
+//Confirmando exclusão da tarefa.
+function confirmDelete(){
+    let confirm = window.confirm("A tarefa selecionada será deletada permanentemente, deseja confirmar essa ação ?")
+    if(confirm ==  true){
+        return true
+    }
+}
 
+//Limpando BD e removendo bugs!
+function clearBD(){
+    let clearBD = localStorage.getItem('id');
+    if(clearBD == -1) {
+        return localStorage.clear();
+    }
+}
 
 
 
