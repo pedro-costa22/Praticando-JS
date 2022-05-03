@@ -1,6 +1,6 @@
 <h2> Projetos simples p/ praticar JS </h2>
 
-<p> • Todos os projetos aqui presentes, foram realizados apenas com o intuito de praticar e aperfeiçoar meus conhecimentos em JavaScript e Desenvolvimento Web
+<p> • Todos os projetos aqui presentes, foram realizados apenas com o intuito de praticar e aperfeiçoar meus conhecimentos em JavaScript e Desenvolvimento Web.
 </p>
 
 <span>
