@@ -34,6 +34,9 @@
    <span align="left">Progress Bar </span> <br>
   <img height="450em" src="https://github.com/pedro-costa22/Praticando-JS/blob/master/Demonstrativo/todo-list.gif?raw=true"/> <br> <br>
     
+   <span align="left">Progress Bar </span> <br>
+  <img height="450em" src="https://github.com/pedro-costa22/Praticando-JS/blob/master/Demonstrativo/consulta%20cep.gif?raw=true"/> <br> <br>
+    
     
     
  </div>
