@@ -31,8 +31,11 @@
    <span align="left">Progress Bar </span> <br>
   <img height="450em" src="https://github.com/pedro-costa22/Praticando-JS/blob/master/Demonstrativo/progressBar.gif?raw=true"/> <br> <br>
     
-   <span align="left">Progress Bar </span> <br>
+   <span align="left">Todo list </span> <br>
   <img height="450em" src="https://github.com/pedro-costa22/Praticando-JS/blob/master/Demonstrativo/todo-list.gif?raw=true"/> <br> <br>
+    
+   <span align="left">Consulta de CEP usando API via CEP </span> <br>
+  <img height="450em" src="https://github.com/pedro-costa22/Praticando-JS/blob/master/Demonstrativo/consulta%20cep.gif?raw=true"/> <br> <br>
     
     
     
